@@ -1,4 +1,9 @@
 // IMPORT
 
 // EXECUTION
-console.log('home page');
+
+/* header: start */
+/* header: end */
+
+/* footer: start */
+/* footer: end */
