@@ -16,7 +16,7 @@ This project is for educational porpuses only. Pull request are welcome, but pri
 
 Site published at: https://front-end-by-rimantas.github.io/40-grupe-portfolio/
 
-Design: [Omex-3](https://finestwp.co/demos/wp/omex/landing-03/), [Omex-5](https://finestwp.co/demos/wp/omex/landing-05/)
+Design: [Omex-3](https://finestwp.co/demos/wp/omex/landing-03/), [Omex-5 (atskaitos taškas)](https://finestwp.co/demos/wp/omex/landing-05/)
 
 ## 🎯 Project features/goals
 
