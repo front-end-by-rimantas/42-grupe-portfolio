@@ -29,6 +29,19 @@
     --ml11: calc(var(--ml10) + var(--inc));
 }
 
+.hidden {
+    display: none !important;
+}
+.visible {
+    display: inline-block !important;
+}
+.visible-flex {
+    display: flex !important;
+}
+.visible-grid {
+    display: grid !important;
+}
+
 .container {
     width: 100%;
     padding: 60px 0;
@@ -125,6 +138,19 @@
         --half-gap: 15px;
     }
 
+    .hidden-sm {
+        display: none !important;
+    }
+    .visible-sm {
+        display: inline-block !important;
+    }
+    .visible-flex-sm {
+        display: flex !important;
+    }
+    .visible-grid-sm {
+        display: grid !important;
+    }
+
     .container > .row > .col-sm-1 {
         width: var(--c1);
     }
@@ -203,6 +229,19 @@
 @media (min-width: 768px) {
     :root {
         --half-gap: 20px;
+    }
+
+    .hidden-md {
+        display: none !important;
+    }
+    .visible-md {
+        display: inline-block !important;
+    }
+    .visible-flex-md {
+        display: flex !important;
+    }
+    .visible-grid-md {
+        display: grid !important;
     }
 
     .container > .row > .col-md-1 {
@@ -285,6 +324,19 @@
         --half-gap: 25px;
     }
 
+    .hidden-lg {
+        display: none !important;
+    }
+    .visible-lg {
+        display: inline-block !important;
+    }
+    .visible-flex-lg {
+        display: flex !important;
+    }
+    .visible-grid-lg {
+        display: grid !important;
+    }
+
     .container > .row > .col-lg-1 {
         width: var(--c1);
     }
@@ -365,6 +417,19 @@
         --half-gap: 30px;
     }
 
+    .hidden-xl {
+        display: none !important;
+    }
+    .visible-xl {
+        display: inline-block !important;
+    }
+    .visible-flex-xl {
+        display: flex !important;
+    }
+    .visible-grid-xl {
+        display: grid !important;
+    }
+
     .container > .row > .col-xl-1 {
         width: var(--c1);
     }
@@ -441,6 +506,19 @@
 }
 
 @media (min-width: 1400px) {
+    .hidden-xxl {
+        display: none !important;
+    }
+    .visible-xxl {
+        display: inline-block !important;
+    }
+    .visible-flex-xxl {
+        display: flex !important;
+    }
+    .visible-grid-xxl {
+        display: grid !important;
+    }
+
     .container > .row > .col-xxl-1 {
         width: var(--c1);
     }
