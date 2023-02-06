@@ -1,4 +1,7 @@
 .service-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 .service-features > .item {
     display: flex;
@@ -15,9 +18,21 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: red;
+    background-color: #ffffff44;
 }
 .service-features > .item > .title {
 }
 .service-features > .item > .description {
+}
+
+@media (min-width: 786px) {
+    .service-features {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .service-features {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
