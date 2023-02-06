@@ -36,9 +36,25 @@ p {
     line-height: 1.7em;
 }
 
+.white {
+    color: #fff;
+}
+.grey {
+    color: #eee;
+}
+.black {
+    color: #000;
+}
 .bg-white {
     background-color: #fff;
 }
 .bg-grey {
     background-color: #eee;
+}
+.bg-black {
+    background-color: #000;
+}
+
+.center {
+    text-align: center;
 }
