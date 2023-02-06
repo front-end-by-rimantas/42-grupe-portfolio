@@ -35,3 +35,10 @@ p {
     font-size: 20px;
     line-height: 1.7em;
 }
+
+.bg-white {
+    background-color: #fff;
+}
+.bg-grey {
+    background-color: #eee;
+}

@@ -14,3 +14,13 @@
 .header .logo {
     margin-right: auto;
 }
+
+.main-nav {
+    display: flex;
+    gap: 2em;
+    font-size: 20px;
+}
+.main-nav > a {
+    color: #fff;
+    text-decoration: none;
+}
