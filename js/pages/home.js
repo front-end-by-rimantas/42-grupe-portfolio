@@ -2,6 +2,19 @@
 
 // EXECUTION
 
+/* service-features: start */
+
+const serviceDOM = document.getElementById('service');
+serviceDOM.innerText = 'Labas';
+serviceDOM.classList.add('bg-grey');
+serviceDOM.classList.remove('bg-grey');
+
+const featuresListDOM = document.getElementById('features_list');
+const serviceItemsDOM = featuresListDOM.querySelectorAll('.item > h3');
+console.log(serviceItemsDOM);
+
+/* service-features: end */
+
 /* header: start */
 /* header: end */
 
