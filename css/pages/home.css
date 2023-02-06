@@ -5,13 +5,27 @@
 @import '../3rd-party/font-awesome.min.css';
 /* components */
 @import '../components/button.css';
+@import '../components/header.css';
 
 /* CUSTOM STYLE BELOW THIS COMMENT LINE */
+
+body {
+    background: linear-gradient(
+        90deg,
+        #1f1f35 0%,
+        #1f1f35 59%,
+        #4b3ee4 59%,
+        #4b3ee4 100%
+    );
+}
 
 /* header: start */
 /* header: end */
 
 /* hero: start */
+.hero p {
+    color: #ccc;
+}
 /* hero: end */
 
 /* features: start */
