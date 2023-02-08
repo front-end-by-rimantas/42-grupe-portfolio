@@ -34,12 +34,15 @@
     border-radius: 10px;
 }
 .gallery .card > .image {
+    width: 100%;
     aspect-ratio: 16/9;
+    object-fit: cover;
 }
 .gallery .card > .title {
     padding: 0 1em;
 }
 .gallery .card > .title:hover {
+    color: #f00;
 }
 .gallery .card > .tag {
     padding: 0 1em;
