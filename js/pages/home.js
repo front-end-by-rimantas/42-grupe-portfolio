@@ -2,28 +2,31 @@
 import { renderServiceFeatures } from '../components/renderServiceFeatures.js';
 import serviceFeaturesData from '../data/serviceFeaturesData.js';
 
+import { portfolioData } from '../data/portfolioData.js';
+
 // EXECUTION
 
-/* service-features: start */
+/* gallery: start */
 
-renderServiceFeatures('features_list', serviceFeaturesData);
+console.log(portfolioData);
 
-/* service-features: end */
+/* gallery: end */
 
 /* header: start */
-
 const hamburgerDOM = document.querySelector('.hamburger');
 
 function kaDaryti() {
     console.log('DAROM 2023!!!');
 }
-
 hamburgerDOM.addEventListener('click', kaDaryti);
-
 /* header: end */
 
 /* hero: start */
 /* hero: end */
+
+/* service-features: start */
+renderServiceFeatures('features_list', serviceFeaturesData);
+/* service-features: end */
 
 /* features: start */
 /* features: end */
