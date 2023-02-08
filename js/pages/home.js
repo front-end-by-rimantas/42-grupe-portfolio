@@ -3,13 +3,12 @@ import { renderServiceFeatures } from '../components/renderServiceFeatures.js';
 import serviceFeaturesData from '../data/serviceFeaturesData.js';
 
 import { portfolioData } from '../data/portfolioData.js';
+import { Gallery } from '../components/Gallery.js';
 
 // EXECUTION
 
 /* gallery: start */
-
-console.log(portfolioData);
-
+new Gallery('#portfolio_block', portfolioData);
 /* gallery: end */
 
 /* header: start */
