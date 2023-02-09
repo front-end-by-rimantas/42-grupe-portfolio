@@ -8,7 +8,7 @@ import { Gallery } from '../components/Gallery.js';
 // EXECUTION
 
 /* gallery: start */
-new Gallery(4852615, portfolioData);
+new Gallery('#portfolio_block', portfolioData);
 /* gallery: end */
 
 /* header: start */

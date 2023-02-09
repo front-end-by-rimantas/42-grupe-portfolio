@@ -41,23 +41,27 @@ class Gallery {
     // }
 
     isNonEmptyString(str) {
-        return typeof str === 'string' && str !== '';
+        return typeof str === 'string' && str.trim() !== '';
     }
 
     isPositiveInteger(num) {
         return Number.isInteger(num) && num > 0;
     }
 
+    isNonEmptyArray(arr, minSize = 1) {
+        return Array.isArray(arr) && arr.length >= minSize;
+    }
+
     isValidData() {
-        const { imgFolder, contentOrder, size, data } = this.data;
-        const { min, max } = size;
+        const { imgFolder, contentOrder, size, data } = this.data ?? {};
+        const { min, max } = size ?? {};
 
         if (this.isNonEmptyString(imgFolder)) {
-            this.imgFolder = imgFolder;
+            this.imgFolder = imgFolder.trim();
         }
 
         if (this.isNonEmptyString(contentOrder)) {
-            this.contentOrder = contentOrder;
+            this.contentOrder = contentOrder.trim();
         }
 
         if (size && this.isPositiveInteger(min)) {
@@ -68,13 +72,55 @@ class Gallery {
             this.size.max = max;
         }
 
-        if (!data || !Array.isArray(data) || data.length < this.size.min) {
+        if (!this.isNonEmptyArray(data, this.size.min)) {
             return false;
         }
 
+        const correctData = [];
+
         for (const item of data) {
-            // validuojam individualius objektus
+            if (
+                typeof item !== 'object' ||
+                Array.isArray(item) ||
+                item === null
+            ) {
+                continue;
+            }
+
+            const { img, alt, title, href, tags } = item;
+
+            if (
+                !this.isNonEmptyString(img) ||
+                !this.isNonEmptyString(alt) ||
+                !this.isNonEmptyString(title) ||
+                !this.isNonEmptyString(href) ||
+                !this.isNonEmptyArray(tags)
+            ) {
+                continue;
+            }
+
+            item.img = item.img.trim();
+            item.alt = item.alt.trim();
+            item.title = item.title.trim();
+            item.href = item.href.trim();
+
+            const validTags = [];
+            for (const tag of tags) {
+                if (this.isNonEmptyString(tag)) {
+                    validTags.push(tag.trim());
+                }
+            }
+
+            if (validTags.length === 0) {
+                continue;
+            }
+
+            item.tags = validTags;
+
+            correctData.push(item);
         }
+
+        this.data.data = correctData;
 
         return true;
     }
@@ -90,12 +136,19 @@ class Gallery {
     contentHTML() {
         let HTML = '';
 
+        let count = 0;
         for (const item of this.data.data) {
+            if (count >= this.size.max) {
+                break;
+            }
+            count++;
+            const path = this.imgFolder + item.img;
+
             HTML += `<div class="card">
-                            <img class="image" src="./img/portfolio/1.jpg" alt="Portfolio image 1">
-                            <a class="title" href="#">Working Keyboard</a>
-                            <p class="tag">Branding</p>
-                        </div>`;
+                        <img class="image" src="${path}" alt="${item.alt}">
+                        <a class="title" href="${item.href}">${item.title}</a>
+                        <p class="tag">${item.tags[0]}</p>
+                    </div>`;
         }
 
         return HTML;
