@@ -20,6 +20,7 @@ class Gallery {
         }
 
         this.render();
+        this.enableFilter();
     }
 
     isValidSelector() {
@@ -126,11 +127,30 @@ class Gallery {
     }
 
     filterHTML() {
-        return `<div class="option active">All</div>
-                <div class="option">Branding</div>
-                <div class="option">Designing</div>
-                <div class="option">Photography</div>
-                <div class="option">Development</div>`;
+        const data = this.data.data.map((item) => item.tags);
+
+        // const tagsList = [];
+        // for (const tags of data) {
+        //     for (const tag of tags) {
+        //         tagsList.push(tag);
+        //     }
+        // }
+        const tagsList = data.flat();
+
+        const uniqueTags = [];
+        for (const tag of tagsList) {
+            if (!uniqueTags.includes(tag)) {
+                uniqueTags.push(tag);
+            }
+        }
+
+        let HTML = '<div class="option active">All</div>';
+
+        for (const tag of uniqueTags) {
+            HTML += `<div class="option">${tag}</div>`;
+        }
+
+        return HTML;
     }
 
     contentHTML() {
@@ -164,6 +184,10 @@ class Gallery {
 
         this.DOM.classList.add('gallery');
         this.DOM.innerHTML = HTML;
+    }
+
+    enableFilter() {
+        console.log('ENABLE FILTER....');
     }
 }
 
