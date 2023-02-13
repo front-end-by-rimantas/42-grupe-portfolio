@@ -123,7 +123,7 @@ class Gallery {
 
         this.data.data = correctData;
 
-        return true;
+        return correctData.length > 0;
     }
 
     filterHTML() {
@@ -137,16 +137,19 @@ class Gallery {
         // }
         const tagsList = data.flat();
 
-        const uniqueTags = [];
+        const lowercaseUniqueTags = [];
+        const originalUniqueTags = [];
         for (const tag of tagsList) {
-            if (!uniqueTags.includes(tag)) {
-                uniqueTags.push(tag);
+            const correctTag = tag.toLowerCase();
+            if (!lowercaseUniqueTags.includes(correctTag)) {
+                lowercaseUniqueTags.push(correctTag);
+                originalUniqueTags.push(tag);
             }
         }
 
         let HTML = '<div class="option active">All</div>';
 
-        for (const tag of uniqueTags) {
+        for (const tag of originalUniqueTags) {
             HTML += `<div class="option">${tag}</div>`;
         }
 
@@ -162,9 +165,11 @@ class Gallery {
                 break;
             }
             count++;
-            const path = this.imgFolder + item.img;
 
-            HTML += `<div class="card">
+            const path = this.imgFolder + item.img;
+            const dataTags = item.tags.join(',').toLowerCase();
+
+            HTML += `<div class="card" data-tags="${dataTags}">
                         <img class="image" src="${path}" alt="${item.alt}">
                         <a class="title" href="${item.href}">${item.title}</a>
                         <p class="tag">${item.tags[0]}</p>
@@ -187,7 +192,28 @@ class Gallery {
     }
 
     enableFilter() {
-        console.log('ENABLE FILTER....');
+        const filterOptionsDOM = this.DOM.querySelectorAll('.filter > .option');
+        const cardsDOM = this.DOM.querySelectorAll('.gallery-content > .card');
+
+        for (const optionDOM of filterOptionsDOM) {
+            optionDOM.addEventListener('click', () => {
+                const tag = optionDOM.innerText;
+                if (tag === 'All') {
+                    for (const cardDOM of cardsDOM) {
+                        cardDOM.classList.remove('hide');
+                    }
+                } else {
+                    for (const cardDOM of cardsDOM) {
+                        const tags = cardDOM.dataset.tags.split(',');
+                        if (tags.includes(tag.toLowerCase())) {
+                            cardDOM.classList.remove('hide');
+                        } else {
+                            cardDOM.classList.add('hide');
+                        }
+                    }
+                }
+            });
+        }
     }
 }
 

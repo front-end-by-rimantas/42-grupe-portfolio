@@ -11,14 +11,14 @@ const portfolioData = {
             alt: 'Portfolio image 1',
             title: 'Working Keyboard',
             href: '#',
-            tags: ['Branding', 'Designing'],
+            tags: ['Branding', 'UPS', 'Designing'],
         },
         {
             img: '2.jpg',
             alt: 'Portfolio image 2',
             title: 'The Micro Headphones',
             href: '#',
-            tags: ['Development', 'Branding'],
+            tags: ['Development', 'branding'],
         },
         {
             img: '3.jpg',
