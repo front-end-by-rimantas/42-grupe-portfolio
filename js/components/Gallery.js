@@ -197,6 +197,11 @@ class Gallery {
 
         for (const optionDOM of filterOptionsDOM) {
             optionDOM.addEventListener('click', () => {
+                this.DOM.querySelector('.option.active').classList.remove(
+                    'active'
+                );
+                optionDOM.classList.add('active');
+
                 const tag = optionDOM.innerText;
                 if (tag === 'All') {
                     for (const cardDOM of cardsDOM) {
