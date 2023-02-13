@@ -2,13 +2,37 @@
 import { renderServiceFeatures } from '../components/renderServiceFeatures.js';
 import serviceFeaturesData from '../data/serviceFeaturesData.js';
 
-import { portfolioData } from '../data/portfolioData.js';
+// import { portfolioData } from '../data/portfolioData.js';
 import { Gallery } from '../components/Gallery.js';
 
 // EXECUTION
 
 /* gallery: start */
-new Gallery('#portfolio_block', portfolioData);
+const portfolioDataAPI =
+    'https://front-end-by-rimantas.github.io/42-grupe-portfolio/data/portfolioData.json';
+
+// Promise versija
+// fetch(portfolioDataAPI)
+//     .then((res) => res.json())
+//     .then((obj) => new Gallery('#portfolio_block', obj))
+//     .catch(() => {
+//         return;
+//     });
+
+// Async/await versija
+async function renderGallery() {
+    try {
+        const res = await fetch(portfolioDataAPI);
+        const portfolioData = await res.json();
+        new Gallery('#portfolio_block', portfolioData);
+    } catch (err) {
+        console.log('Err...');
+    }
+}
+await renderGallery();
+
+// Statine (duomenys is kodo failo) versija
+// new Gallery('#portfolio_block', portfolioData);
 /* gallery: end */
 
 /* header: start */
