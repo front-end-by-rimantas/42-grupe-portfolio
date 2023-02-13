@@ -1,0 +1,73 @@
+{
+    "imgFolder": "./img/portfolio/",
+    "contentOrder": "imgAZ",
+    "size": {
+        "min": 3,
+        "max": 6
+    },
+    "data": [
+        {
+            "img": "1.jpg",
+            "alt": "Portfolio image 1",
+            "title": "Working Keyboard",
+            "href": "#",
+            "tags": ["Branding", "UPS", "Designing"]
+        },
+        {
+            "img": "2.jpg",
+            "alt": "Portfolio image 2",
+            "title": "The Micro Headphones",
+            "href": "#",
+            "tags": ["Development", "branding"]
+        },
+        {
+            "img": "3.jpg",
+            "alt": "Portfolio image 3",
+            "title": "The Coffee Cup",
+            "href": "#",
+            "tags": ["Designing", "Development"]
+        },
+        {
+            "img": "4.jpg",
+            "alt": "Portfolio image 4",
+            "title": "The Wooden Desk",
+            "href": "#",
+            "tags": ["Photography"]
+        },
+        {
+            "img": "5.jpg",
+            "alt": "Portfolio image 5",
+            "title": "Camera",
+            "href": "#",
+            "tags": ["Photography"]
+        },
+        {
+            "img": "6.jpg",
+            "alt": "Portfolio image 6",
+            "title": "Branded Laptop",
+            "href": "#",
+            "tags": ["Photography"]
+        },
+        {
+            "img": "7.jpg",
+            "alt": "Portfolio image 7",
+            "title": "Kitchen",
+            "href": "#",
+            "tags": ["Designing", "Development"]
+        },
+        {
+            "img": "8.jpg",
+            "alt": "Portfolio image 8",
+            "title": "Flower",
+            "href": "#",
+            "tags": ["Designing", "Photography"]
+        },
+        {
+            "img": "9.jpg",
+            "alt": "Portfolio image 9",
+            "title": "Chair",
+            "href": "#",
+            "tags": ["Branding", "Photography"]
+        }
+    ]
+}
